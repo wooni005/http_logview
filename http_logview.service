@@ -1,0 +1,13 @@
+[Unit]
+Description=HTTP Logging view service to show logging in browser
+After=syslog.target network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/python3 /home/pi/scripts/python/http_logview/http_logview.py
+User=root
+Restart=always
+RestartSec=2s
+
+[Install]
+WantedBy=multi-user.target
